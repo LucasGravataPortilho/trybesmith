@@ -6,6 +6,13 @@ async function getAll(req: Request, res: Response) {
   res.status(200).json(products);
 }
 
+async function create(req: Request, res: Response) {
+  const product = req.body;
+  const result = await productService.create(product);
+  res.status(201).json(result);
+}
+
 export default {
   getAll,
+  create,
 };
