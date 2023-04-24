@@ -3,7 +3,7 @@ import { Product } from '../types/product';
 import connection from './connection';
 
 async function getAll(): Promise<Product[]> {
-  const [rows] = await connection.execute<RowDataPacket[]>('SELECT * FROM products');
+  const [rows] = await connection.execute<RowDataPacket[]>('SELECT * FROM Trybesmith.products');
   return rows as Product[];
 }
 
